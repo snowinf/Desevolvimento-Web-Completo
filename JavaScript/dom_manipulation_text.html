@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulação de texto com DOM</title>
+    <script>
+        function distribuiCaracter() {
+            let caracter = document.getElementById('caracter').value
+            document.getElementById('caracter').value = ''
+            
+            caracter.trim()
+
+            switch(caracter) {
+                case '0':
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                case '5':
+                case '6':
+                case '7':
+                case '8':
+                case '9':
+                    document.getElementById('number').value += caracter
+                break;
+                default:
+                    document.getElementById('texto').value += caracter       
+            }
+
+        }
+    </script>
+</head>
+<body>
+    
+    <input id="caracter" type="text" placeholder="Digite seu caracter aqui!"" onkeyup="distribuiCaracter()"/>
+
+    <hr />
+
+    <span>Letras:</span>
+    <input id="texto" type="text" disabled/>
+    <span>Numeros:</span>
+    <input id="number" type="number" disabled />
+
+    
+
+</body>
+</html>

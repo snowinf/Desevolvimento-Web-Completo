@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio DOM</title>
+ 
+    <script>
+        function acionaCampo() {
+            document.getElementById("input").style.background = "yellow"
+        }
+
+        function desativaCampo() {
+            let entrada = document.getElementById("input")
+
+            if (entrada.value.length <= 0){
+               entrada.style.background = "white"
+            } else if (entrada.value.length < 3) {
+                entrada.style.background = "red"
+            } else {
+                entrada.style.background = "green"
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    
+    <h1>Testando o DOM</h1>
+    <input id="input" type="Text" placeholder="Digite qualquer coisa" onfocus="acionaCampo()" onblur="desativaCampo()" />
+
+
+
+</html>
